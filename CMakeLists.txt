@@ -7,4 +7,4 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS -pthread)
 
-add_executable (pc4 main.cpp lodepng.cpp lodepng.h Header.h Filter.h Filter.cpp Rotated.h Rotated.cpp Teacher.h Teacher.cpp)
+add_executable (pc4 main.cpp Functions/lodepng.cpp Functions/lodepng.h Functions/Header.h Functions/Filter.h Functions/Filter.cpp Functions/Rotated.h Functions/Rotated.cpp Functions/Teacher.h Functions/Teacher.cpp)
