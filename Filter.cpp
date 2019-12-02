@@ -1,6 +1,4 @@
-#include "Funciones.h"
-
-//void Rotar(vector<unsigned char> image) {}
+#include "Filter.h"
 
 void set_img(vector<unsigned char>& image, size_t bgin, size_t size, size_t w, char color){
     int temp_color_1 = 5, temp_color_2 = 5;

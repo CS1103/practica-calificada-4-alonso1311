@@ -1,4 +1,5 @@
-﻿#include "Funciones.h"
+﻿#include "Filter.h"
+#include "Rotated.h"
 #include "lodepng.h"
 
 std::vector<unsigned char> decode(string_view filename,
