@@ -41,8 +41,8 @@ int main()
     encode("../out_blue.png", image_blue, w, h);*/
 
     auto image = decode("../in.png", w, h);
-    rotated(image, w, h, 90);
-    //encode("../out_rotated.png", image, w, h);
+    auto temp_image = rotated(image, w, h, 90);
+    encode("../out_rotated.png", temp_image, w, h);
 
     return 0;
 }

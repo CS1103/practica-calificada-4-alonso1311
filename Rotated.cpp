@@ -26,18 +26,16 @@
     }
 }*/
 
-void rotated(vector<unsigned char> image, size_t w, size_t h, double grados) {
-    vector<unsigned char> temp_image;
+vector<unsigned char> rotated(vector<unsigned char> image, size_t w, size_t h, double grados) {
+    vector<unsigned char> temp_image(image.size());
 
     double radians = (grados * M_PI) / 180;
     int sinf = (int) sin(radians);
     int cosf = (int) cos(radians);
 
-    double x0 = 0.5 * (w - 1);     // point to rotate about
-    double y0 = 0.5 * (h - 1); // center of image
-    cout << x0 << " " << y0 << endl;
+    double x0 = 0.5 * (w - 1);
+    double y0 = 0.5 * (h - 1);
 
-    // rotation
     for (int x = 0; x < w; x++) {
         for (int y = 0; y < h; y++) {
             long double a = x - x0;
@@ -46,20 +44,15 @@ void rotated(vector<unsigned char> image, size_t w, size_t h, double grados) {
             int yy = (int) (+a * sinf + b * cosf + y0);
 
             if (xx >= 0 && xx < w && yy >= 0 && yy < h) {
-                temp_image.push_back(image[(yy * h + xx) * 3 + 0]);
-                temp_image.push_back(image[(yy * h + xx) * 3 + 1]);
-                temp_image.push_back(image[(yy * h + xx) * 3 + 2]);
-                temp_image.push_back(image[(yy * h + xx) * 3 + 3]);
+                temp_image[(y * h + x) * 3 + 0] = image[(yy * h + xx) * 3 + 0];
+                temp_image[(y * h + x) * 3 + 1] = image[(yy * h + xx) * 3 + 1];
+                temp_image[(y * h + x) * 3 + 2] = image[(yy * h + xx) * 3 + 2];
             }
         }
     }
 
-
-
-    image.clear();
-    for(const auto& i : temp_image)
-        image.push_back(i);
-
-    encode("../out_rotated.png", image, w, h);
-
+    return temp_image;
 }
+
+
+
