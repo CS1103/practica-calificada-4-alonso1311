@@ -1,8 +1,5 @@
-﻿#include <iostream>
-#include <vector>
-#include <string_view>
+﻿#include "Funciones.h"
 #include "lodepng.h"
-using namespace std;
 
 std::vector<unsigned char> decode(string_view filename,
     unsigned int& width, unsigned int& height) {
@@ -26,9 +23,11 @@ int main()
 {
     unsigned int w;
     unsigned int h;
-    auto image = decode("../in.png", w, h);
+
+
+
     // Un comment if you want to check buffer content
-    for (size_t i = 0; i < h; i++) {
+    /*for (size_t i = 0; i < h; i++) {
         for (size_t j = 0; j < w * 4; j += 4) {
             int r = image[i * w * 4 + j + 0]; // Red component
             int g = image[i * w * 4 + j + 1]; // Green component
@@ -40,7 +39,24 @@ int main()
             std::cout << a << "|";
         }
         std::cout << endl;
-    }
-    encode("../out.png", image, w, h);
+    }*/
+
+    //--> R: red_fiter
+    //--> G: green_fiter
+    //--> B: blue_fiter
+
+    auto image_red = decode("../in.png", w, h);
+    filter(image_red, w, h, 'R');
+    encode("../out_red.png", image_red, w, h);
+
+    auto image_green = decode("../in.png", w, h);
+    filter(image_green, w, h, 'G');
+    encode("../out_green.png", image_green, w, h);
+
+    auto image_blue = decode("../in.png", w, h);
+    filter(image_blue, w, h, 'B');
+    encode("../out_blue.png", image_blue, w, h);
+
+
     return 0;
 }
