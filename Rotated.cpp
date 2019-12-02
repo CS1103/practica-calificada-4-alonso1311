@@ -1,31 +1,5 @@
 #include "Rotated.h"
 
-/*void rotate_img(vector<unsigned char>& image, size_t bgin, size_t size, size_t w, char color){
-    int temp_color_1 = 5, temp_color_2 = 5;
-
-    if(color == 'R'){
-        temp_color_1 = 1;
-        temp_color_2 = 2;
-    }
-
-    else if(color == 'G'){
-        temp_color_1 = 0;
-        temp_color_2 = 2;
-    }
-
-    else if(color == 'B'){
-        temp_color_1 = 0;
-        temp_color_2 = 1;
-    }
-
-    for (; bgin < size; bgin++) {
-        for (size_t j = 0; j < w * 4; j += 4) {
-            image[bgin * w * 4 + j + temp_color_1] = 0;
-            image[bgin * w * 4 + j + temp_color_2] = 0;
-        }
-    }
-}*/
-
 vector<unsigned char> rotated(vector<unsigned char> image, size_t w, size_t h, double grados) {
     vector<unsigned char> temp_image(image.size());
 
