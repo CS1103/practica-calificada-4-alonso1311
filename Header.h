@@ -9,6 +9,7 @@
 #include <vector>
 #include <string_view>
 #include <thread>
+#include <cmath>
 
 using namespace std;
 

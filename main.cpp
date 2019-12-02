@@ -24,11 +24,11 @@ int main()
         std::cout << endl;
     }*/
 
-    //--> R: red_fiter
-    //--> G: green_fiter
-    //--> B: blue_fiter
+    //--> 'R': red_filter
+    //--> 'G': green_filter
+    //--> 'B': blue_filter
 
-    auto image_red = decode("../in.png", w, h);
+    /*auto image_red = decode("../in.png", w, h);
     filter(image_red, w, h, 'R');
     encode("../out_red.png", image_red, w, h);
 
@@ -38,8 +38,11 @@ int main()
 
     auto image_blue = decode("../in.png", w, h);
     filter(image_blue, w, h, 'B');
-    encode("../out_blue.png", image_blue, w, h);
+    encode("../out_blue.png", image_blue, w, h);*/
 
+    auto image = decode("../in.png", w, h);
+    rotated(image, w, h, 90);
+    //encode("../out_rotated.png", image, w, h);
 
     return 0;
 }
